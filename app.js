@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
+var world = require('./routes/world');
 var technology = require('./routes/technology');
 var sports = require('./routes/sports');
 var films = require('./routes/films');
@@ -25,6 +26,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+app.use('/world',world);
 app.use('/technology',technology);
 app.use('/sports',sports);
 app.use('/films',films);
