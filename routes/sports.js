@@ -7,7 +7,7 @@ var response;
 /* GET users listing. */
 router.get('/', function (req, res, next) {
 
-    options.uri='http://content.guardianapis.com/uk/sport';
+    options.uri='http://content.guardianapis.com/uk/sport?show-fields=headline,thumbnail,trailText';
 
     requestPromise(options)
         .then(function (repos) {

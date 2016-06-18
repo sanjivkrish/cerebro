@@ -7,7 +7,7 @@ var response;
 /* GET users listing. */
 router.get('/', function (req, res, next) {
 
-    options.uri=' https://content.guardianapis.com/technology/technology';
+    options.uri=' https://content.guardianapis.com/technology/technology?show-fields=headline,thumbnail,trailText';
 
     requestPromise(options)
         .then(function (repos) {
