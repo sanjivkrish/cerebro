@@ -13,9 +13,14 @@ li a {
 
 .navbar {
     min-height: 30px;
-    margin-bottom: 0px;
+    margin-bottom: 3px;
 }
 
 .nav>li>a {
      padding: 0px 0px; 
+}
+
+.news-container {
+    height: 215px;
+    overflow-y: auto;
 }
