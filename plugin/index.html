@@ -1,8 +1,24 @@
 <html>
     <head>
         <title>Cerebro</title>
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="styles/app.css"/>
+        <script src="lib/angularjs/angular.min.js"></script>
+        <script src="lib/jquery/jquery.min.js"></script>
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script type="application/javascript" src="scripts/app.js"></script>
     </head>
-    <body>
-        Hell0
+    <body ng-app=cerebro>
+        <div ng-controller="mainCtrl">
+            <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                <ul class="nav">
+                  <li ng-repeat="menu in menus track by $index">
+                      <a href="#" ng-bind="menu.display" style="width:{{366/menus.length}}"></a>
+                    </li>
+                </ul>
+              </div>
+            </nav>
+        </div>
     </body>
 </html>
