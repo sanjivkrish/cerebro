@@ -13,7 +13,7 @@
             <nav class="navbar navbar-default">
               <div class="container-fluid">
                 <ul class="nav">
-                  <li ng-repeat="menu in menus track by $index">
+                  <li ng-repeat="menu in menus track by $index" ng-click="switchMenu(menu.api)">
                     <a href="#" ng-bind="menu.display" style="width:{{366/menus.length}}"></a>
                   </li>
                 </ul>
