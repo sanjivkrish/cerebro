@@ -1,7 +1,7 @@
 angular.module('cerebro', [])
 .controller('mainCtrl', function($scope, $http) {
     //
-    //
+    // Address to which the api requests are send
     //
     var serverAddress = 'http://localhost:3333';
 
@@ -10,8 +10,8 @@ angular.module('cerebro', [])
     //
     $scope.menus = [
         {display : 'Sports', api : 'sports'},
-        {display : 'Films', api : 'film'},
-        {display : 'Technology', api : 'tech'}
+        {display : 'Films', api : 'films'},
+        {display : 'Technology', api : 'technology'}
     ];
 
     //
@@ -23,9 +23,22 @@ angular.module('cerebro', [])
     // Make a call for 'World' news
     //
     $http.get(serverAddress + '/world').then(function(res) {
-        console.log(res.data);
         $scope.newsContent = res.data;
     }, function(err) {
         console.log('API news/world failed : ', err);
     });
+
+    //
+    // Switch Menu
+    //
+    $scope.switchMenu = function(api) {
+        //
+        // Make a call for requested menu
+        //
+        $http.get(serverAddress + '/' + api).then(function(res) {
+            $scope.newsContent = res.data;
+        }, function(err) {
+            console.log('Error : ', err);
+        });
+    };
 });
