@@ -20,16 +20,16 @@
               </div>
             </nav>
             <div class="news-container">
-                <div ng-repeat="menu in menus track by $index">
-                    <div class="thumbnail panel panel-default">
-                            <img src="Icons/cerebro.png"/>
-                    </div>
-                    <div class="content panel panel-default">
-                        <div class="panel-heading">Panel heading without title</div>
-                        <div class="panel-body">
-                            Basic panel example
+                <div ng-repeat="news in newsContent track by $index" title="{{news.fields.trailText}}">
+                    <a href="{{news.webUrl}}" target="_blank">
+                        <div class="thumbnail panel panel-default">
+                                <img ng-src="{{news.fields.thumbnail}}"/>
                         </div>
-                    </div>
+                        <div class="content panel panel-default">
+                            <div class="panel-heading">{{news.fields.headline}}</div>
+                            <div class="panel-body">{{news.fields.trailText}}</div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
