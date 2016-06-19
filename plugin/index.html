@@ -14,16 +14,21 @@
               <div class="container-fluid">
                 <ul class="nav">
                   <li ng-repeat="menu in menus track by $index">
-                      <a href="#" ng-bind="menu.display" style="width:{{366/menus.length}}"></a>
-                    </li>
+                    <a href="#" ng-bind="menu.display" style="width:{{366/menus.length}}"></a>
+                  </li>
                 </ul>
               </div>
             </nav>
             <div class="news-container">
-                <div class="panel panel-default" ng-repeat="menu in menus track by $index">
-                    <div class="panel-heading">Panel heading without title</div>
-                    <div class="panel-body">
-                        Basic panel example
+                <div ng-repeat="menu in menus track by $index">
+                    <div class="thumbnail panel panel-default">
+                            <img src="Icons/cerebro.png"/>
+                    </div>
+                    <div class="content panel panel-default">
+                        <div class="panel-heading">Panel heading without title</div>
+                        <div class="panel-body">
+                            Basic panel example
+                        </div>
                     </div>
                 </div>
             </div>
